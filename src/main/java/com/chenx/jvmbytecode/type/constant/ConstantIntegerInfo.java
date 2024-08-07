@@ -1,6 +1,7 @@
 package com.chenx.jvmbytecode.type.constant;
 
 import com.chenx.jvmbytecode.type.U1;
+import com.chenx.jvmbytecode.type.U2;
 import com.chenx.jvmbytecode.type.U4;
 
 import java.nio.ByteBuffer;
@@ -26,5 +27,9 @@ public class ConstantIntegerInfo extends CpInfo{
     @Override
     public String toString() {
         return "CONSTANT_Integer_info";
+    }
+
+    public U4 getBytes() {
+        return bytes;
     }
 }

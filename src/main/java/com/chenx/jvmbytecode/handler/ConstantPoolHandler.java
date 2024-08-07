@@ -36,7 +36,7 @@ public class ConstantPoolHandler implements BaseByteCodeHandler{
             CpInfo cpInfo = CpInfo.newCpInfo(tag);
             // 执行常量对象的read方法解析常量
             cpInfo.read(codeBuf);
-            System.out.println("#" + (i + 1) + ":" + cpInfo);
+//            System.out.println("#" + (i + 1) + ":" + cpInfo);
             // 设置ClassFile对象的常量池内容
             classFile.getConstant_pool()[i] = cpInfo;
             // 遇到CONSTANT_Long_info常量或是CONSTANT_Double_info常量时，下一个常量不读取，直到跳到下下个常量。

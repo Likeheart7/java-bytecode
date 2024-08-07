@@ -44,4 +44,8 @@ public class ConstantUtf8Info extends CpInfo{
                 ",length=" + length.toInt() +
                 ",str=" + new String(bytes, StandardCharsets.UTF_8);
     }
+
+    public byte[] getBytes() {
+        return bytes;
+    }
 }

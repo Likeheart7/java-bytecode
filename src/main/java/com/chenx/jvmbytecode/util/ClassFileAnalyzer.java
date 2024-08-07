@@ -1,9 +1,6 @@
 package com.chenx.jvmbytecode.util;
 
-import com.chenx.jvmbytecode.handler.BaseByteCodeHandler;
-import com.chenx.jvmbytecode.handler.ConstantPoolHandler;
-import com.chenx.jvmbytecode.handler.MagicHandler;
-import com.chenx.jvmbytecode.handler.VersionHandler;
+import com.chenx.jvmbytecode.handler.*;
 import com.chenx.jvmbytecode.type.ClassFile;
 
 import java.io.File;
@@ -23,6 +20,12 @@ public class ClassFileAnalyzer {
         BYTE_CODE_HANDLERS.add(new MagicHandler());
         BYTE_CODE_HANDLERS.add(new VersionHandler());
         BYTE_CODE_HANDLERS.add(new ConstantPoolHandler()); // 常量池解析器
+        BYTE_CODE_HANDLERS.add(new AccessFlagHandler()); // 访问修饰符解析器
+        BYTE_CODE_HANDLERS.add(new ThisAndSuperClassHandler()); // this和super解析器
+        BYTE_CODE_HANDLERS.add(new InterfaceHandler()); // 接口解析器
+        BYTE_CODE_HANDLERS.add(new FieldHandler()); // 字段解析器
+        BYTE_CODE_HANDLERS.add(new MethodHandler()); // 方法解析器
+        BYTE_CODE_HANDLERS.add(new AttributeHandler()); // 属性表解析器
 
         // 根据每个解析器返回的排序信息，对List中的各个解析器排序。
         BYTE_CODE_HANDLERS.sort(Comparator.comparingInt(BaseByteCodeHandler::order));
@@ -33,12 +36,13 @@ public class ClassFileAnalyzer {
      * @param codeBuf   class文件对应的字节，ByteBuffer对象可以更好的控制读取
      * @return  解析出来的ClassFile对象
      */
-    public static ClassFile Analysis(ByteBuffer codeBuf) throws Exception {
+    public static ClassFile analysis(ByteBuffer codeBuf) throws Exception {
         codeBuf.position(0  );
         ClassFile classFile = new ClassFile();
         for (BaseByteCodeHandler handler : BYTE_CODE_HANDLERS){
             handler.read(codeBuf, classFile);
         }
+        System.out.println("class文件解析完成，剩余未解析字节数：" + codeBuf.remaining());  // 未0表示正常解析完成
         return classFile;
     }
 

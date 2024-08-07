@@ -27,4 +27,8 @@ public class ConstantClassInfo extends CpInfo{
                 "name_index=" + nameIndex.toInt() +
                 '}';
     }
+
+    public U2 getNameIndex() {
+        return nameIndex;
+    }
 }
