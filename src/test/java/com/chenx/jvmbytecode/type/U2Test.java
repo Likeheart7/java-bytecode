@@ -1,5 +1,6 @@
 package com.chenx.jvmbytecode.type;
 
+import com.chenx.jvmbytecode.classfileparse.type.U2;
 import org.junit.jupiter.api.Test;
 
 public class U2Test {

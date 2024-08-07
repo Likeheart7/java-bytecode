@@ -1,14 +1,14 @@
 package com.chenx.jvmbytecode.handler;
 
 
-import com.chenx.jvmbytecode.factory.AttributeProcessFactory;
-import com.chenx.jvmbytecode.type.*;
-import com.chenx.jvmbytecode.type.attribute.CodeAttribute;
-import com.chenx.jvmbytecode.type.attribute.ConstantValueAttribute;
-import com.chenx.jvmbytecode.type.constant.*;
-import com.chenx.jvmbytecode.util.ClassAccessFlagUtil;
-import com.chenx.jvmbytecode.util.ClassFileAnalyzer;
-import com.chenx.jvmbytecode.util.FieldAccessFlagUtils;
+import com.chenx.jvmbytecode.classfileparse.factory.AttributeProcessFactory;
+import com.chenx.jvmbytecode.classfileparse.type.*;
+import com.chenx.jvmbytecode.classfileparse.type.constant.*;
+import com.chenx.jvmbytecode.classfileparse.type.attribute.CodeAttribute;
+import com.chenx.jvmbytecode.classfileparse.type.attribute.ConstantValueAttribute;
+import com.chenx.jvmbytecode.classfileparse.util.ClassAccessFlagUtil;
+import com.chenx.jvmbytecode.classfileparse.util.ClassFileAnalyzer;
+import com.chenx.jvmbytecode.classfileparse.util.FieldAccessFlagUtils;
 import org.junit.jupiter.api.Test;
 
 import java.nio.ByteBuffer;

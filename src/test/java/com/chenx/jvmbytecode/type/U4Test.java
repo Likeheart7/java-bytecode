@@ -1,8 +1,7 @@
 package com.chenx.jvmbytecode.type;
 
+import com.chenx.jvmbytecode.classfileparse.type.U4;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class U4Test {
 
