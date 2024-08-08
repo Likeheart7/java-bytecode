@@ -1,7 +1,6 @@
 package com.chenx.jvmbytecode.classfileparse.handler;
 
 import com.chenx.jvmbytecode.classfileparse.type.*;
-import com.chenx.jvmbytecode.type.*;
 
 import java.nio.ByteBuffer;
 
